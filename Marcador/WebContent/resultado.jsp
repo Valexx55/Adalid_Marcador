@@ -19,9 +19,23 @@ function programarllamada()
 {
 	setInterval (actualizarResultado, 10000);
 }
+var xmlHttp = new XMLHttpRequest();
 function actualizarResultado ()
 {
-	alert ("Función invocada");
+	//alert ("Función invocada"); INICIAR EL AJAX
+	xmlHttp.onreadystatechange = mensajerecibido;
+	xmlHttp.open('GET', 'ActualizarInfoPartido', true);
+	xmlHttp.send (null);
+}
+function mensajerecibido() {
+	if (xmlHttp.readyState==4)
+		{
+			if (xmlHttp.status==200)
+				{
+				//habremos recibido un json
+				console.log (xmlHttp.responseText);
+				}
+		}
 }
 </script>
 </head>

@@ -20,6 +20,27 @@ public class ConsultarResultado extends HttpServlet {
 	private static Marcador marcador = null;
 	private static Imagen imagen = null;
        
+	
+	public static void actualizarMarcador (Marcador marcador_nuevo)
+	{
+		marcador = marcador_nuevo;
+	}
+	
+	public static void actualizarComentarios (Comentario comentario_nuevo)
+	{
+		lista_comentarios.add(comentario_nuevo);
+	}
+	
+	public static Marcador obtenerLastMarcador ()
+	{
+		return marcador;
+	}
+	
+	public static List<Comentario> getListaComentarios ()
+	{
+		return lista_comentarios;
+	}
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -63,5 +84,12 @@ public class ConsultarResultado extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }
+
+
+
+
+
+
+
+
