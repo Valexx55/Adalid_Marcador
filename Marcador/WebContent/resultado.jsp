@@ -44,9 +44,21 @@ function mensajerecibido() {
 				caja_visitante.innerHTML = infojson.marcador.goles_visitante;
 				var tabla= document.getElementById ("tablacomentarios");
 				//todo actualizar tabla comentarios
-				infojson.listacomentarios[0].minuto
-				infojson.listacomentarios[0].comentario
+				while (tabla.rows.length > 1)//recorro y
+					{
+					tabla.deleteRow(1);//borro la filas
+					}
 				}
+			
+				for (var i = 0; i<infojson.listacomentarios.length; i++ )
+					{
+						var tr_nueva = tabla.insertRow(1);
+						var td_min = tr_nueva.insertCell(0);
+						var td_comen = tr_nueva.insertCell(1);
+						td_min.innerHTML = infojson.listacomentarios[i].minuto;
+						td_comen.innerHTML = infojson.listacomentarios[i].comentario;
+					}
+			
 		}
 }
 </script>
