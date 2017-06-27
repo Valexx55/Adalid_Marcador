@@ -34,6 +34,18 @@ function mensajerecibido() {
 				{
 				//habremos recibido un json
 				console.log (xmlHttp.responseText);
+				var infojson = JSON.parse (xmlHttp.responseText);
+				
+				//alert ("GV " +infojson.marcador.goles_visitante);
+				//alert ("GL " +infojson.marcador.goles_local);
+				var caja_local = document.getElementById ("goleslocal");
+				var caja_visitante = document.getElementById ("golesvisitante");
+				caja_local.innerHTML = infojson.marcador.goles_local;
+				caja_visitante.innerHTML = infojson.marcador.goles_visitante;
+				var tabla= document.getElementById ("tablacomentarios");
+				//todo actualizar tabla comentarios
+				infojson.listacomentarios[0].minuto
+				infojson.listacomentarios[0].comentario
 				}
 		}
 }
@@ -46,7 +58,7 @@ function mensajerecibido() {
 <div class="goles" id="goleslocal">${marcador.goles_local}</div>
 <div class="goles" id="golesvisitante">${marcador.goles_visitante}</div>
 <div id="comentarios">
-<table>
+<table id="tablacomentarios">
 <th>MINUTO</th>
 <th>COMENTARIO</th>
 <tr>
