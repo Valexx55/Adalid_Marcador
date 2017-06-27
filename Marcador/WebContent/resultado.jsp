@@ -58,6 +58,8 @@ function mensajerecibido() {
 						td_min.innerHTML = infojson.listacomentarios[i].minuto;
 						td_comen.innerHTML = infojson.listacomentarios[i].comentario;
 					}
+				var cajafoto = document.getElementById ("fotopartido");
+				cajafoto.src = infojson.fotopartido;
 			
 		}
 }
@@ -65,7 +67,7 @@ function mensajerecibido() {
 </head>
 <body onload="programarllamada()">
 <div id="divfoto">
-<img src="${imagen.ruta}" width="400" height="350">
+<img id="fotopartido" src="${imagen.ruta}" width="400" height="350">
 </div>
 <div class="goles" id="goleslocal">${marcador.goles_local}</div>
 <div class="goles" id="golesvisitante">${marcador.goles_visitante}</div>
@@ -81,6 +83,18 @@ function mensajerecibido() {
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
